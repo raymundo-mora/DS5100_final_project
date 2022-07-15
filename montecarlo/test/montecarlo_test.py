@@ -11,11 +11,17 @@ from random import randint
 from montecarlo.montecarlo import *
 
 
-class DieTestSuite(unittest.TestCase):
+class montecarloTestSuite(unittest.TestCase):
+    """Provides unit tests for the montecarlo package. 
+
+    """
     
 
     # Test Die.change_w()
     def test_1_die_change_w(self):
+        """Checks if the face in the dataframe was updated with the correct 
+        new weight. 
+        """
         
         # Instantiate Die object
         die1 = Die(['jack','queen','king','ace'])
@@ -31,6 +37,9 @@ class DieTestSuite(unittest.TestCase):
         
     # Test Die.roll()
     def test_2_die_roll(self):
+        """Checks that the number of outcomes reported 
+        is equal to nrolls passed. 
+        """
 
         # Instantiate Die object
         die1 = Die(['jack','queen','king','ace'])
@@ -41,6 +50,9 @@ class DieTestSuite(unittest.TestCase):
         self.assertEqual(len(outcomes),nrolls)
 
     def test_3_die_show(self):
+        """Checks that the shape of the data frame returned
+        is as expected. 
+        """
 
         # Instantiate Die object
         faces = ['jack','queen','king','ace']
@@ -50,6 +62,9 @@ class DieTestSuite(unittest.TestCase):
 
 
     def test_4_game_play(self):
+        """Checks that the shape of the data frame returned
+        is as expected.
+        """
 
 
         # Instantiate Game object 
@@ -64,6 +79,9 @@ class DieTestSuite(unittest.TestCase):
         self.assertEqual(game1._df.shape, (nrolls,ndie))
 
     def test_5_game_show_wide(self):
+        """Checks that the shape of the data frame returned
+        is as expected.
+        """
 
         # Instantiate Game object 
         die1 = Die(['jack','queen','king','ace'])
@@ -77,6 +95,9 @@ class DieTestSuite(unittest.TestCase):
         self.assertEqual(game1.show().shape, (nrolls,ndie))
     
     def test_6_game_show_narrow(self):
+        """Checks that the shape of the data frame returned 
+        is as expected.
+        """
 
         # Instantiate Game object 
         die1 = Die(['jack','queen','king','ace'])
@@ -90,7 +111,9 @@ class DieTestSuite(unittest.TestCase):
         self.assertEqual(game1.show('narrow').shape, (nrolls*ndie,))
 
     def test_7_analyzer_jackpot(self):
-
+        """Asserts that the number of jackpots returned
+        is correct by calculating it in the test. 
+        """
         # Instantiate Analyzer object 
         die1 = Die(['jack','queen','king','ace'])
         die2 = Die(['jack','queen','king','ace'])
@@ -103,6 +126,10 @@ class DieTestSuite(unittest.TestCase):
 
 
     def test_8_analyzer_combo(self):
+        """Checks if the sum of the numbers of each
+        combination is equal to nrolls. This makes 
+        sure nothing was counted twice or missed. 
+        """
 
         # Instantiate Analyzer object 
         die1 = Die(['jack','queen','king','ace'])
@@ -119,6 +146,10 @@ class DieTestSuite(unittest.TestCase):
 
 
     def test_9_analyzer_face_counts_per_roll(self):
+        """Makes sure that the sum of the number each
+        face was rolled is equal to the total number 
+        of rolls in the game. 
+        """
 
         # Instantiate Analyzer object 
         die1 = Die(['jack','queen','king','ace'])
