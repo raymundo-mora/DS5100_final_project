@@ -8,12 +8,6 @@ This repository contains all of the files for my final project submission for DS
 ## Directory Structure 
 .
 <br>
-├── ***DS5100_final_project.egg-info***
-<br>
-│   ├── dependency_links.txt<br>
-│   ├── PKG-INFO<br>
-│   ├── SOURCES.txt<br>
-│   └── top_level.txt<br>
 ├── LICENSE<br>
 ├── ***montecarlo***<br>
 │   ├── \_\_init\_\_.py<br>
