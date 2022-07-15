@@ -1,11 +1,11 @@
 # DS5100_final_project
 
-## Metadata
+## 0. Metadata
 **Author**: Raymundo Mora <br>
 **Project**: Monte Carlo Simulator
 Class: DS5100
 
-## Synopsis
+## 1. Synopsis
 ### 1.0 Installation
 After cloning the repo you can install it by typing <br>
 `pip intsall -e .` <br>
@@ -35,15 +35,41 @@ To see the results try the following: <br>
 <br>
 
 ### 1.4 Analyzing Games
+To analyze a game you must instantiate a **Game** object. You can use methods of the **Analyzer** class to <br>
+<ol>
+  <li>Get the number of jackpots the game returned. </li>
+  <li>Get a dataframe for the different combinations that the game rolled and how many times each appeared</li>
+  <li>Get a data frame of how many times each face appeared in a given roll</li>
+</ol>
 
+<br>
 
+You can test these methods with the code below. <br>
+**Instantiate an Analyzer object** <br>
+`import numpy as np`<br>
+`from montecarlo.montecarlo import *`<br>
+`die1 = Die(['heads','tails'])`<br>
+`game1 = Game(np.full(5,die1))`<br>
+`game1.play(5)`<br>
+`game1.show()`<br>
+`analyze1 = Analyzer(game1)`<br>
+**Call the methods on analyze1**<br>
+`analyze1.jackpot()`<br>
+`analyze1.combo()`<br>
+`analyze1.face_counts_per_roll()`<br>
 
+![image](https://user-images.githubusercontent.com/92943544/179264290-6876539b-bc3e-4e0d-a54f-a9ffb0f1baaf.png)
+
+<br>
+
+## 2. 
 
 <br>
 This repository contains all of the files for my final project submission for DS5100. 
 
-
-
+**Class** <ol>
+  <li>Die</li>
+          </ol>
 
 
 ## Directory Structure 
