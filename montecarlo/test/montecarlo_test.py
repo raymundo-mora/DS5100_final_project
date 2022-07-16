@@ -22,7 +22,6 @@ class montecarloTestSuite(unittest.TestCase):
 
     """
     
-
     # Test Die.change_w()
     def test_1_die_change_w(self):
         """Checks if the face in the dataframe was updated with the correct 
@@ -166,8 +165,6 @@ class montecarloTestSuite(unittest.TestCase):
         game1.play(nrolls)
         analyzer1 = Analyzer(game1)
         df = analyzer1.face_counts_per_roll()
-
-
         nfaces = len(game1.die_list) * nrolls
         face_count = sum([df[col].sum() for col in df.columns])
         self.assertEqual(nfaces,face_count)
