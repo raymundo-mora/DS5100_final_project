@@ -4,13 +4,12 @@ Author: RaymundoMora
 @github: https://github.com/raymundo-mora 
 @url: 
 
-Description: This file contains of the classes created for the 
+Description: This file contains the classes created for the 
 Monte Carlo Simulator. This is for the final project of DS5100.
 
 Created: 2022-07-08
 Modified 2022-07-15
 ''' 
-# %% 
 import numpy as np
 import pandas as pd
 import random
@@ -51,7 +50,6 @@ class Die:
         Returns:
             None:
         """
-
         ## Validate arguments
         face_val = face in list(self._die_df['face'])
         wtypes = [int,float]
@@ -94,10 +92,7 @@ class Die:
             the data frame of its faces and associated weights. 
         """
         return self._die_df
-# %% 
-die1 = Die(['heads','tails'])
-die1._die_df
-# %% 
+
 class Game: 
     """Groups a list of die to roll n times for a game and saves 
     the results. 
