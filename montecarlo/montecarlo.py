@@ -221,3 +221,4 @@ class Analyzer:
         face_counts_per_roll_df = self.game._df.apply(pd.Series.value_counts,axis=1).fillna(0)
         face_counts_per_roll_df.index.name = 'roll_number'
         return face_counts_per_roll_df
+        
