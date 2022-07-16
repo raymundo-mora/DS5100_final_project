@@ -1,9 +1,15 @@
-# Class: DS5100
-# Assignment: Final Project
-# Author: Raymundo Mora
+'''
+Author: RaymundoMora 
+@linkedin: https://www.linkedin.com/in/raymundo-mora/ 
+@github: https://github.com/raymundo-mora 
+@url: 
 
+Description: This file contains tests for the classes created for the 
+Monte Carlo Simulator. This is for the final project of DS5100.
 
-
+Created: 2022-07-08
+Modified 2022-07-15
+''' 
 # Import packages
 import unittest
 import numpy as np

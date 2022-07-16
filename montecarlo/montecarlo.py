@@ -37,6 +37,7 @@ class Die:
         self._die_df = pd.DataFrame({'face':faces,
                                   'weight':w
                                   })
+        self._die_df.index.name = 'roll_num'
         return None
     # Method 1 
     def change_w(self,face,weight) ->None:
@@ -62,7 +63,6 @@ class Die:
         else:
             i = self._die_df[self._die_df['face'] == face].index[0]
             self._die_df.loc[i,'weight'] = weight
-            self._die_df.index.name = 'roll_num'
             return None
     # Method 2 
     def roll(self,nrolls=1)-> list:
@@ -94,7 +94,10 @@ class Die:
             the data frame of its faces and associated weights. 
         """
         return self._die_df
-
+# %% 
+die1 = Die(['heads','tails'])
+die1._die_df
+# %% 
 class Game: 
     """Groups a list of die to roll n times for a game and saves 
     the results. 
@@ -221,5 +224,5 @@ class Analyzer:
             the number of times each face appeared in that roll as the elemets. 
         """
         face_counts_per_roll_df = self.game._df.apply(pd.Series.value_counts,axis=1).fillna(0)
-        face_counts_per_roll_df.index.name = 'roll'
+        face_counts_per_roll_df.index.name = 'roll_number'
         return face_counts_per_roll_df
